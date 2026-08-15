@@ -1,0 +1,885 @@
+/* ==================================================
+   MHRJR STORE
+   CLEAN & RESPONSIVE CSS
+   ================================================== */
+
+
+/* ================================
+   ROOT / VARIABLES
+================================ */
+
+:root {
+    --primary: #b6895b;
+    --bg: #010101;
+    --dark: #111111;
+    --white: #ffffff;
+    --gray: #777777;
+}
+
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.4rem 7%;
+
+    background: rgba(51, 51, 56, 0.95);
+
+    border-bottom: 1px solid #363232;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Logo */
+
+.navbar .navbar-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    color: rgb(192, 9, 9);
+
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: #3d10f0;
+}
+
+
+/* Navigation */
+
+.navbar .navbar-nav a {
+    color: #ffffff;
+
+    display: inline-block;
+
+    font-size: 1rem;
+
+    margin: 0 1rem;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+
+/* Garis bawah menu */
+
+.navbar .navbar-nav a::after {
+    content: "";
+
+    display: block;
+
+    padding-bottom: 0.5rem;
+
+    border-bottom: 0.1rem solid var(--primary);
+
+    transform: scaleX(0);
+
+    transition: transform 0.3s ease;
+
+    transform-origin: center;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Navbar extra */
+
+.navbar .navbar-extra a {
+    color: #ffffff;
+
+    margin: 0 0.5rem;
+
+    transition: 0.3s;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+
+/* Menu hamburger */
+
+#menu {
+    display: none;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    background-image: url("../img/mhrjr_store2.jpg");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+/* Overlay */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(1, 1, 1, 0.95) 5%,
+            rgba(1, 1, 1, 0.15) 55%,
+            rgba(1, 1, 1, 0.25) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Hero content */
+
+.hero .content {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 1.4rem 7%;
+
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 2.5rem;
+
+    color: #ffffff;
+
+    line-height: 1.5;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+
+/* Hero paragraph */
+
+.hero .content p {
+    font-size: 1.4rem;
+
+    margin-top: 1rem;
+
+    line-height: 1.6;
+
+    font-weight: 300;
+
+    color: #eeeeee;
+}
+
+
+/* Hero button */
+
+.hero .content .cta {
+    margin-top: 1.5rem;
+
+    display: inline-block;
+
+    padding: 1rem 1.5rem;
+
+    font-size: 1rem;
+
+    color: #ffffff;
+
+    background: var(--primary);
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero .content .cta:hover {
+    background: #d1a673;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(182, 137, 91, 0.3);
+}
+
+
+/* ================================
+   GENERAL SECTION
+================================ */
+
+.about,
+.koleksi,
+.contact {
+    padding: 10rem 7% 4rem;
+
+    scroll-margin-top: 80px;
+}
+
+
+/* Section title */
+
+.about h2,
+.koleksi h2,
+.contact h2 {
+    text-align: center;
+
+    font-size: 2.6rem;
+
+    margin-bottom: 3rem;
+
+    color: var(--white);
+}
+
+.about h2 span,
+.koleksi h2 span,
+.contact h2 span {
+    color: var(--primary);
+}
+
+
+/* ================================
+   ABOUT
+================================ */
+
+.about .row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3rem;
+}
+
+.about .row .about-img {
+    flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 10px;
+
+    object-fit: cover;
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+
+    padding: 0 2rem;
+}
+
+.about .row .content h3 {
+    font-size: 1.8rem;
+
+    margin-bottom: 1rem;
+
+    color: var(--primary);
+}
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+
+    font-size: 1.1rem;
+
+    font-weight: 300;
+
+    line-height: 1.8;
+
+    color: #dddddd;
+}
+
+
+/* ================================
+   KOLEKSI
+================================ */
+
+.koleksi p {
+    max-width: 30rem;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    line-height: 1.7;
+
+    color: #bbbbbb;
+}
+
+
+/* Koleksi row */
+
+.koleksi .row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    margin-top: 3rem;
+
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+
+/* Card */
+
+.koleksi .row .koleksi-card {
+    text-align: center;
+
+    width: 220px;
+
+    transition: 0.3s;
+}
+
+.koleksi .row .koleksi-card:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Image */
+
+.koleksi .row .koleksi-card img {
+    width: 80%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    transition: 0.4s;
+}
+
+.koleksi .row .koleksi-card:hover img {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 10px 30px rgba(182, 137, 91, 0.25);
+}
+
+
+/* Title */
+
+.koleksi .row .koleksi-card .koleksi-card-title {
+    margin: 1rem 0;
+
+    font-size: 1.1rem;
+
+    color: #ffffff;
+}
+
+
+/* Price */
+
+.koleksi .row .koleksi-card .koleksi-card-price {
+    margin: 1rem;
+
+    color: var(--primary);
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   CONTACT
+================================ */
+
+.contact {
+    min-height: 60vh;
+
+    text-align: center;
+}
+
+.contact p {
+    max-width: 40rem;
+
+    margin: 0 auto;
+
+    line-height: 1.7;
+
+    color: #cccccc;
+}
+
+
+/* ================================
+   FOOTER MHRJR STORE
+================================ */
+
+.mhrjr-footer {
+    text-align: center;
+
+    padding: 45px 20px 25px;
+
+    margin-top: 30px;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* Logo footer */
+
+.mhrjr-footer .footer-logo {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: Georgia, serif;
+
+    font-size: 1.8rem;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation:
+        footerMuncul 1s ease forwards;
+}
+
+.mhrjr-footer .footer-logo i {
+    font-size: 1rem;
+
+    color: var(--primary);
+
+    animation:
+        iconBergerak 2s ease-in-out infinite;
+}
+
+
+/* Garis */
+
+.mhrjr-footer .footer-line {
+    width: 0;
+
+    height: 1px;
+
+    background: var(--primary);
+
+    margin: 15px auto;
+
+    animation:
+        garisMuncul 1.2s ease forwards;
+
+    animation-delay: 0.4s;
+}
+
+
+/* Tagline */
+
+.mhrjr-footer .footer-tagline {
+    font-family: Georgia, serif;
+
+    font-size: 1rem;
+
+    font-style: italic;
+
+    letter-spacing: 2px;
+
+    color: #cccccc;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    animation:
+        footerMuncul 1s ease forwards;
+
+    animation-delay: 0.7s;
+}
+
+
+/* Copyright */
+
+.mhrjr-footer .footer-copy {
+    margin-top: 20px;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+    color: #aaaaaa;
+
+    opacity: 0;
+
+    animation:
+        fadeFooter 1s ease forwards;
+
+    animation-delay: 1s;
+}
+
+
+/* Rights */
+
+.mhrjr-footer .footer-rights {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+
+    color: #777777;
+
+    opacity: 0;
+
+    animation:
+        fadeFooter 1s ease forwards;
+
+    animation-delay: 1.3s;
+}
+
+
+/* ================================
+   FOOTER ANIMATIONS
+================================ */
+
+@keyframes footerMuncul {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes garisMuncul {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50px;
+    }
+
+}
+
+
+@keyframes fadeFooter {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes iconBergerak {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-5px);
+    }
+
+}
+
+
+/* ================================
+   LAPTOP
+================================ */
+
+@media (max-width: 1366px) {
+
+    html {
+        font-size: 75%;
+    }
+
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 758px) {
+
+    html {
+        font-size: 62.5%;
+    }
+
+
+    /* Menu */
+
+    #menu {
+        display: inline-block;
+
+        color: #ffffff;
+
+        font-size: 1.8rem;
+
+        cursor: pointer;
+    }
+
+
+    /* Navbar */
+
+    .navbar .navbar-nav {
+
+        position: absolute;
+
+        top: 100%;
+
+        right: -100%;
+
+        width: 16rem;
+
+        height: 100vh;
+
+        background:
+            rgba(43, 43, 46, 0.98);
+
+        transition: 0.3s;
+
+        padding-top: 2rem;
+    }
+
+
+    .navbar .navbar-nav.active {
+        right: 0;
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+
+    .navbar .navbar-nav a {
+        display: block;
+
+        margin: 1.2rem 2rem;
+
+        font-size: 1.2rem;
+    }
+
+
+    /* Hero */
+
+    .hero .content {
+        padding: 1.4rem 5%;
+    }
+
+    .hero .content h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero .content p {
+        font-size: 1.2rem;
+    }
+
+
+    /* About */
+
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img {
+        flex: 1 1 100%;
+    }
+
+    .about .row .about-img img {
+        height: 20rem;
+
+        object-fit: cover;
+
+        object-position: center;
+    }
+
+    .about .row .content {
+        flex: 1 1 100%;
+
+        padding: 1rem 0;
+    }
+
+
+    /* Koleksi */
+
+    .koleksi .row {
+        gap: 1rem;
+    }
+
+    .koleksi .row .koleksi-card {
+        width: 45%;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 55%;
+    }
+
+
+    .navbar {
+        padding: 1.2rem 5%;
+    }
+
+
+    .navbar .navbar-logo {
+        font-size: 2rem;
+    }
+
+
+    .hero {
+        background-position: center;
+    }
+
+
+    .hero .content h1 {
+        font-size: 2rem;
+    }
+
+
+    .hero .content p {
+        font-size: 1.1rem;
+    }
+
+
+    .about,
+    .koleksi,
+    .contact {
+        padding: 8rem 5% 3rem;
+    }
+
+
+    .about h2,
+    .koleksi h2,
+    .contact h2 {
+        font-size: 2.2rem;
+    }
+
+
+    .koleksi .row .koleksi-card {
+        width: 100%;
+    }
+
+
+    .koleksi .row .koleksi-card img {
+        width: 65%;
+    }
+
+
+    .mhrjr-footer {
+        padding:
+            35px 15px 20px;
+    }
+
+
+    .mhrjr-footer .footer-logo {
+        font-size: 1.5rem;
+
+        letter-spacing: 3px;
+    }
+
+}
